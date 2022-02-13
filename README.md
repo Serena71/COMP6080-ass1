@@ -37,7 +37,7 @@ Please build your page in `task1/index.html`. You are welcome to create as many 
 * The asset(s) are provided in `task1/assets`.
 * Your font doesn't have to match exactly. You can use font-family `Arial` or `Helvetica` for the page. Everything else like the font spacing does have to work.
 
-### Task 2 - Static, fixed size page
+### Task 2 - Responsive static page
 
 Build a page that looks identical to `task2/page_wide.png`. The viewport width you should work with is 1200 x 1289 pixels. You are only allowed to use HTML and CSS for this task. No external libraries are permitted.
 
@@ -50,6 +50,8 @@ You are required to use a layout (e.g. flexbox) that means as you resize the win
 ![](./task2/page_narrow.PNG)
 
 Please build your page in `task2/index.html`. You are welcome to create as many CSS files that you need in the `task2` folder for `index.html` to import. When being marked, your tutor will start with `index.html`.
+
+Note: You do not need to worry about the red underline under "todos".
 
 #### Assets
 * 11 SVG assets have been provided in the `assets` folder.
@@ -172,7 +174,7 @@ Your assignment will be hand-marked by tutor(s) in the course according to the c
 		<td>50%</td>
 		<td>
 			<ul>
-				<li>Rendered static HTML page accurately matches the reference image provided for each task</li>
+				<li>Rendered static HTML page accurately matches the reference image provided for each task (within a few pixels)</li>
 				<li>For specified tasks, pseudo-class behaviour satisfies the task requirements</li>
 				<li>For specified tasks, rendered HTML page renders appropriately for intermediate sizes</li>
 				<li>For specified tasks, JS events triggered by specific actions occur as specified</li>
@@ -192,6 +194,7 @@ Your assignment will be hand-marked by tutor(s) in the course according to the c
 				<li>Ensure that source code (HTML, CSS, JS) is no more complicated or verbose than necessary to solve a given problem (less is more).</li>
 				<li>Maintaining separation between HTML and CSS for structural and stylistic aspects, respectively</li>
 				<li>Avoiding usage of more obselete methods of page styling that have been discussed in lectures (e.g. tables for non-tabular purposes)</li>
+				<li>Implementation is simple, and no more complicated or difficult to understand than necessary</li>
 			</ul>
 		</td>
 	</tr>
