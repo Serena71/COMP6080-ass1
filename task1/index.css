@@ -1,0 +1,107 @@
+body{
+    display: flex;
+    font-family: Helvetica;
+    color: #656680;
+    word-spacing: 1px;
+    }
+
+#img{
+    flex:1;
+    margin-right: 25px;
+}
+
+img{
+    position: absolute;
+    width: 120px;
+    top: 22%;
+}
+
+#content{
+    flex:8;
+    margin-top:15px;
+    color: rgb(41, 43, 48);
+}
+
+
+.topbar{
+    font-size: 17px;
+    margin-right: 10px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+button{
+   text-transform: uppercase;
+   background-color: transparent;
+   border-style: none;
+   font-weight: bold;
+}
+
+.aus{
+   background-color: rgba(0,128,255,255);
+   color: white;
+   border-style: none;
+   padding: 7px;
+}
+
+
+h1 {
+   text-transform: uppercase;
+   /* font-weight: bold; */
+   color: rgb(36,92,173);
+   font-size: 27px;
+   /* margin-bottom: 10px; */
+}
+
+.text{
+    font-size: 21px;
+    line-height: 40px;
+    letter-spacing: 1px;
+    
+}
+
+.final{
+   margin-left: 15px;
+   
+}
+
+.help-butt{
+   letter-spacing: 1px;
+   background-color: #129f08;
+   font-size: 19px;
+   color: white;
+   padding: 20px 30px;
+   margin-top: 40px;
+}
+
+ul{
+    padding: 0;
+    color: rgba(3,130,255);
+    margin: 20px 5px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.bullet{
+   color:#129f08;
+   font-size: 20px;
+   position: relative;
+   top:3px;
+   margin:0 3px
+
+}
+
+li {
+    display:inline-block;
+}
+
+/* li::before{
+   content: "\2022";
+   color: #129f08;
+   font-family: bold;
+   width: ; /* Also needed for space (tweak if needed)
+   margin-left: -1em;
+} */
+
+/* li:nth-of-type(1){
+    list-style-type: none;
+} */
