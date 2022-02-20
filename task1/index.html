@@ -6,102 +6,148 @@
              body{
                  display: flex;
                  font-family: Helvetica;
+                 color: #656680;
+                 word-spacing: 1px;
                  }
 
-            .img{
+            #img{
                  flex:1;
+                 margin-right: 25px;
              }
 
              img{
-                 position: relative;
+                 position: absolute;
                  width: 120px;
-                 margin-right: 20px;
-                 top: 25%;
+                 top: 22%;
              }
 
-             .content{
+             #content{
                  flex:8;
+                 margin-top:15px;
                  color: rgb(41, 43, 48);
              }
 
 
             .topbar{
-                 text-transform: uppercase;
-                 margin-top: 15px;
+                 font-size: 17px;
                  margin-right: 10px;
                  border-radius: 3px;
+                 font-weight: bold;
              }
-             .first{
+             button{
+                text-transform: uppercase;
+                background-color: transparent;
+                border-style: none;
+                font-weight: bold;
+             }
+
+             .aus{
                 background-color: rgba(0,128,255,255);
                 color: white;
                 border-style: none;
                 padding: 7px;
              }
-            
-             p{
-                 word-spacing: 5px;
-                 line-height: 40px;
-             }
-             h2 {
+
+
+             h1 {
                 text-transform: uppercase;
                 /* font-weight: bold; */
-                color: rgb(20, 83, 199) ;
-                font-size: 28px;
+                color: rgb(36,92,173);
+                font-size: 27px;
                 /* margin-bottom: 10px; */
              }
 
              .text{
-                 font-size: 20px;
-                 word-spacing: 5px;
+                 font-size: 21px;
+                 line-height: 40px;
+                 letter-spacing: 1px;
+                 
              }
-             
-             .help{
-                text-transform: uppercase;
+
+             .final{
+                margin-left: 15px;
+                
+             }
+
+             .help-butt{
+                letter-spacing: 1px;
                 background-color: #129f08;
-                font-size: large;
+                font-size: 19px;
                 color: white;
-                font-weight: bold;
-                margin: 20px 10px;
-                border-style: none;
-                border-radius: 3px;
-                padding: 20px 35px;
+                padding: 20px 30px;
+                margin-top: 40px;
              }
-             .end{
-                 color: rgba(3,130,255,255);
-                 margin: 0 10px;
+
+             ul{
+                 padding: 0;
+                 color: rgba(3,130,255);
+                 margin: 20px 5px;
+                 font-size: 15px;
                  font-weight: 600;
              }
+
+             .bullet{
+                color:#129f08;
+                font-size: 20px;
+                position: relative;
+                top:3px;
+                margin:0 3px
+
+             }
+
+             li {
+                 display:inline-block;
+             }
+
+             /* li::before{
+                content: "\2022";
+                color: #129f08;
+                font-family: bold;
+                width: ; /* Also needed for space (tweak if needed)
+                margin-left: -1em;
+             } */
+
+             /* li:nth-of-type(1){
+                 list-style-type: none;
+             } */
+
+
          </style>
+
 
 
     </head>
     <body>  
-            <div class="img">
-                <img class="hand" src="assets/hands.png" >
+            <div id="img">
+                <img src="assets/hands.png" >
             </div>
             
 
-            <div class="content">
+            <div id="content">
 
-                <div>
-                    <button class="topbar first">australia</button>
-                    <box class="topbar">new zealand</box>
-                    <box class="topbar">global</box>
+                <div class="topbar">
+                    <button class="aus">australia</button>
+                    <button>new zealand</button>
+                    <button>global</button>
                 </div>
     
                 <div>
-                    <h2>make a difference</h2>
+                    <h1>make a difference</h1>
                     <p class="text">The world can be a very unfriendly place to some. Take the time just to check in with people and see if they're doing OK.</p>
                 </div>
     
-                <div>
-                    <button class="help">help someone out now</button>
-    
-                    <div class="end">
-                        <span>systems and tools</span>
-                        <span>what's new</span>
-                        <span>donate</span>
-                    </div>
+                <div class="final">
+
+                    <button class="help-butt">help someone out now</button>
+
+                    <ul>
+                        <li>Systems and tools </li>
+                        <span class="bullet"> &bull;</span>
+                        <li>What's New</li>
+                        <span class="bullet"> &bull;</span>
+                        <li>Donate</li>
+                    </ul>
+                        
                 </div>
             </div>
              
