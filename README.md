@@ -2,7 +2,8 @@
 
 ## Change Log
 
-N/A
+ * 21/02: Clarified task 3 tab swap is mobile only; Added tick and arrow assets to task3
+ * 21/02: Just a small reminder that you can't use images/assets that aren't provided to you in the assets folder
 
 ## Background & Motivation
 
@@ -83,7 +84,7 @@ You can assume the breakpoint (where it snaps from one layout to another) is whe
 Please build your page in `task3/index.html`. You are welcome to create as many CSS files that you need in the `task3` folder for `index.html` to import. When being marked, your tutor will start with `index.html`.
 
 Other notes include:
- * You will need to use basic javascript for this task to swap between the 3 tabs.
+ * For mobile only, you will need to use basic javascript for this allow clicking on the tab headers to swap you between the 3 tabs.
  * When transitioning from the wide view to the narrow view you must do this with CSS (and it's OK if this involves some duplication of html code or content).
  * You must ensure the "start free trial" buttons must have a slightly darker colour in the `hover` state. This is demonstrated in the difference in colour between image `page_low_width` and `page_min_width`.
  * When the drop down is clicked, it should display as shown in `page_dropdown`. Note that this behaviour should be the same regardless of screen size. Most of this can be done easily with CSS and the overriding of various `<select>` and `<option>` properties. Some Javascript may be required.
