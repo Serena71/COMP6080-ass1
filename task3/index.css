@@ -1,0 +1,105 @@
+body{
+    background-color: rgb(8, 8, 88);
+    color: white;
+    height: 100vh;
+    /* font-family: 'Avant Garde Medium'; */
+    font-family: "Arial";
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.main-section{
+    height: 70%;
+    width: 90%;
+    display: flex;
+
+}
+
+.bachelor{
+    border: 1px solid white;
+    flex: 1;
+    height: 85%;
+    position: relative;
+    top: 20px;
+    
+}
+
+
+.higher-edu{
+    flex:2;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    color: black;
+    
+
+}
+
+.higher-edu select{
+    color: rgb(8, 8, 88);
+}
+
+.degree{
+    padding: 2%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    
+
+}
+
+hr{
+   height: 80%;
+}
+
+select{
+    background-color: transparent;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    width:100%;
+    height: 30px;
+    border-radius: 5px;
+}
+
+span{
+    color: rgb(5, 228, 228);
+}
+
+li{
+    /* list-style:"\2713" ; */
+    list-style-type: none;
+    line-height: 20px;
+}
+
+li::before{
+    content: "\2713";
+    color: rgb(5, 228, 228);
+    
+}
+
+.textbox1{
+    text-align: center;
+}
+
+.textbox2{
+    flex:2
+}
+
+
+
+button{
+    /* width: 100%; */
+    font-size: 10px;
+    height: 30px;
+    background-color: blue;
+    color: white;
+    border-style: none;
+    border-radius: 3px;
+}
