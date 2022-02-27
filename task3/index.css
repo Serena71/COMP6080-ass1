@@ -1,92 +1,126 @@
 body{
-    background-color: rgb(8, 8, 88);
+    /* width: 1614px;
+    height: 1234px; */
+    /* border: 3px solid white; */
+
+
+    background-color: rgb(0, 13, 71);
     color: white;
     height: 100vh;
-    /* font-family: 'Avant Garde Medium'; */
-    font-family: "Arial";
-    font-size: 10px;
+
+    font-family:sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 1.7rem;
+
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
 
-
-.main-section{
-    height: 70%;
-    width: 90%;
-    display: flex;
-
-}
-
-.bachelor{
-    border: 1px solid white;
-    flex: 1;
-    height: 85%;
+#top-section{
     position: relative;
-    top: 20px;
-    
+    bottom: 0.5rem;
 }
 
-
-.higher-edu{
-    flex:2;
-    height: 100%;
-    display: flex;
-    justify-content: space-around;
-    background-color: white;
-    color: black;
-    
-
-}
-
-.higher-edu select{
-    color: rgb(8, 8, 88);
-}
-
-.degree{
-    padding: 2%;
-    border-radius: 5px;
+.course{
+    padding: 30px 40px;
     display: flex;
     flex-direction: column;
     justify-content:space-between;
     
-
 }
 
-hr{
-   height: 80%;
+h1{
+    font-size: 25px;
+    margin-bottom: 1.5rem;
 }
+
+.price{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.grey-text{
+    color: #959595;
+}
+
+
+.dollar-sign{
+    font-size: 25px;
+}
+
+.number{
+    font-size:60px;
+    position:relative;
+    top: 0.3rem;
+    margin: 0 0.2rem;
+}
+
+#doctorate p:last-child{
+    font-weight: bold;
+}
+
 
 select{
     background-color: transparent;
     color: white;
-    font-size: 10px;
+    font-size: 18px;
     font-weight: bold;
+    padding:0 1.5rem;
     width:100%;
-    height: 30px;
+    height: 50px;
+    border-width: 2px;
     border-radius: 5px;
+    margin-bottom: 5%;
 }
 
-span{
+
+.plus{
     color: rgb(5, 228, 228);
 }
 
-li{
-    /* list-style:"\2713" ; */
+.list{
+    font-weight: bold;
+    color: rgb(0, 13, 71);
+}
+
+ul{
+    padding-left: 0px;
+    list-style-position: outside;
+}
+ul li{
     list-style-type: none;
-    line-height: 20px;
+    margin-bottom: 1rem;
+    line-height: 1.5rem;
+    display: flex;
 }
 
 li::before{
-    content: "\2713";
+    content: "\2713\0020\0020";
     color: rgb(5, 228, 228);
-    
+    font-size: 23px;
+    display: inline-block;
+    margin-right: 0.5rem;
 }
+
+
 
 .textbox1{
     text-align: center;
+    font-size: 19px;
 }
+
+.textbox1>p{
+    margin-bottom: 1.5rem;
+}
+
+#doctorate >.textbox1 > p{
+    margin-bottom: 2rem;
+}
+
 
 .textbox2{
     flex:2
@@ -94,12 +128,156 @@ li::before{
 
 
 
-button{
-    /* width: 100%; */
-    font-size: 10px;
-    height: 30px;
-    background-color: blue;
+.course>button{
+    width: 100%;
+    height: 50px;
+    background-color: #4949e4;
+    font-size: 18px;
     color: white;
     border-style: none;
-    border-radius: 3px;
+    border-radius: 5px;
+}
+
+.course>button:hover{
+    background-color: #3a3ab6;
+}
+
+
+#bottom-section{
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#bottom-section >p{
+    width:fit-content;
+    text-align: center;
+}
+
+#bottom-section>hr{
+    background-color: blue;
+    width: 1px;
+    height: 50%;
+    border:none;
+
+}
+
+@media(min-width:1100px){
+
+    .tab{
+        display: none;
+    }
+
+    #main-section{
+        height: 77%;
+        width: 92%;
+        
+        display: flex;
+        align-items: stretch;
+        border: 1px solid white;
+        border-radius: 5px;
+
+    }
+
+    #bachelor{
+        flex: 1;
+    }
+
+
+    #higher-edu{
+        flex:2.5;
+        height: 100%;
+        padding-top: 3rem;
+        padding-bottom: 1.5rem;
+        position: relative;
+        bottom: 5%;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-evenly;
+        background-color: white;
+        color: black;
+        
+
+    }
+
+    #master{
+        flex: 1;
+    }
+    #doctorate{
+        flex: 1;
+    }
+
+    #higher-edu select{
+        color: rgb(0, 13, 71);
+    }
+
+    
+    hr{
+        position: relative;
+        bottom: 2%;
+        width:0.6px;
+        background-color: rgb(0, 13, 71);
+    }
+
+    
+}
+
+@media(max-width:1100px){
+    
+
+    #main-section{
+        height: 80%;
+        width: 95%;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid white;
+        border-radius: 5px;
+        background-color: white;
+
+    }
+
+
+    hr{
+        display: none;
+    }
+
+    #higher-edu{
+        padding: 0;
+        position: inherit;
+        /* display: none; */
+    }
+
+    .tab{
+        display: flex;
+        width: 100%;
+    }
+
+    .tab button {
+        flex: 1;
+        background-color: rgb(0, 13, 71);
+        color: white;
+        letter-spacing: 1px;
+        border: 1px solid white;
+        outline: none;
+        padding: 1.5rem;
+        /* transition: 0.3s; */
+      }
+
+    .tab button.active {
+        background-color: inherit;
+        color: blue;
+      }
+
+    .course {
+        display: none;
+        flex-direction: column;
+
+    }
+    .textbox2{
+        flex: 5;
+    }
+
+ 
 }
