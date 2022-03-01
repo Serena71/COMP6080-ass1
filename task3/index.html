@@ -18,104 +18,145 @@
 
     <div id="main-section">
         <div class="tab">
-            <button class="tablinks" onclick="openCourse(event, 'bachelor')">BACHELOR</button>
-            <button class="tablinks" onclick="openCourse(event, 'master')">MASTERS</button>
-            <button class="tablinks" onclick="openCourse(event, 'doctorate')">Doctorate</button>
+            <button id="btn-bachelor" class="btn active" onclick= "openCourse(this, 'bachelor')">BACHELOR</button>
+            <button id="btn-master" class="btn" onclick="openCourse(this, 'master')">MASTERS</button>
+            <button id="btn-dostorate" class="btn" onclick="openCourse(this, 'doctorate')">Doctorate</button>
         </div>
 
+        <div id="content">
+            <div id="bachelor" class="course">
+                <div class="textboxes">
+                    <div class="textbox1">
+                        <h1>Bachelor</h1>
+                        <p>Get the basic tools you need to tackle most industries</p>
+                        <p class="grey-text">Starting at</p>
+                        <p class="price">
+                            <span class="dollar-sign">$ </span> 
+                            <span class="number">0</span>
+                            <span class="grey-text">/mo.</span>
+                        </p>
+                    </div>
+        
+                    <div class="select-box">
+                        <p>Choose your load and faculty</p>
+                        <select name="drop-down" id="drop-down-bachlor">
+                            <option value="ft-eng" selected="selected">Full time, Engineering</option>
+                            <option value="pt-eng">Part time, Engineering</option>
+                            <option value="ft-sci">Full time, Science</option>
+                            <option value="pt-sci">Part time, Science</option>
+                        </select>
+                    </div>
 
-        <div id="bachelor" class="course">
-
-            <div class="textbox1">
-                <h1>Bachelor</h1>
-                <p>Get the basic tools you need to tackle most industries</p>
-                <p class="grey-text">Starting at</p>
-                <p class="price">
-                    <span class="dollar-sign">$ </span> 
-                    <span class="number">0</span>
-                    <span class="grey-text">/mo.</span>
-                </p>
-            </div>
-            
-
-            <div class="textbox2">
-                <p>Choose your load and faculty</p>
-                <select name="drop-down" id="drop-down-bachlor">
-                    <option value="ft-eng" selected="selected">Full time, Engineering</option>
-                    <option value="pt-eng">Part time, Engineering</option>
-                    <option value="ft-sci">Full time, Science</option>
-                    <option value="pt-sci">Part time, Science</option>
-                </select>
-
-                <p class="list">Includes:</p>
-                <ul>
-                    <li>Up to 3 UNSW courses</li>
-                    <li>Hosted in the cloud</li>
-                </ul>
-            </div>
-
-            <button>START FREE TRIAL</button>
-            
-        </div>
-
-        <div id="higher-edu">
-
-            <div id="master" class="course">
-                <div class="textbox1">
-                    <h1>Masters</h1>
-                    <p>Enhance your base knowledge and put yourself ahead of the rest</p>
-            
-                    <p class="grey-text">Starting at</p>  
-                    <p class="price">
-                        <span class="dollar-sign">$ </span> 
-                        <span class="number">19</span>
-                        <span class="grey-text">/mo.</span>
-                    </p>
+                    <!-- <div class="dropdown">
+                        <p>Choose your load and faculty</p>
+                        <select class="dropdown-menu" onclick="openDropdown(this,'bachelor-dropdown-option')"></select>
+                        <div id="bachelor-dropdown-option" class="dropdown-option">
+                            <div>Full time, Engineering</div>
+                            <div>Part time, Engineering</div>
+                            <div>Full time, Science</div>
+                            <div>Part time, Science</div>
+                        </div>
+                    </div> -->
                     
+        
+                    <div class="textbox2">
+                        <p class="list"> Includes:</p>
+                        <ul>
+                            <li>Up to 3 UNSW courses</li>
+                            <li>Hosted in the cloud</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="textbox2">
-                    <p>Choose your load and faculty</p>
-                    <select name="drop-down" id="drop-down-master">
-                        <option value="Full time, Engineering" selected="selected">Full time, Engineering</option>
-                        <option value="pt-eng">Part time, Engineering</option>
-                        <option value="ft-sci">Full time, Science</option>
-                        <option value="pt-sci">Part time, Science</option>
-                    </select>
-    
-                    <p class="list">Everything in Bachelor, <span class="plus">plus:</span></p>
-                    <ul>
-                        <li>Get access to further courses unavailable to Bacehlors</li>
-                        <li>Opportunities for upper tier students to do focused research</li>
-                    </ul>  
-                </div>
+               
     
                 <button>START FREE TRIAL</button>
+                
             </div>
-            <hr>
     
-            <div id="doctorate" class="course">
+            <div id="higher-edu">
     
-                <div class="textbox1">
-                    <h1>Doctorate</h1>
-                    <p>Complete deep research to completely standout in a unique way</p>
+                <div id="master" class="course">
+                    <div class="textboxes">
+                        <div class="textbox1">
+                            <h1>Masters</h1>
+                            <p>Enhance your base knowledge and put yourself ahead of the rest</p>
                     
-                    <p>Contact us to learn more about scholarships and other information</p>
+                            <p class="grey-text">Starting at</p>  
+                            <p class="price">
+                                <span class="dollar-sign">$ </span> 
+                                <span class="number">19</span>
+                                <span class="grey-text">/mo.</span>
+                            </p>
+                            
+                        </div>
+        
+                        <div class="select-box">
+                            <p>Choose your load and faculty</p>
+                            <select name="drop-down" id="drop-down-master">
+                                <option value="Full time, Engineering" selected="selected">Full time, Engineering</option>
+                                <option value="pt-eng">Part time, Engineering</option>
+                                <option value="ft-sci">Full time, Science</option>
+                                <option value="pt-sci">Part time, Science</option>
+                            </select>
+                        </div>
+
+                        <!-- <div class="dropdown">
+                            <p>Choose your load and faculty</p>
+                            <select class="dropdown-menu" onclick="openDropdown(this,'master-dropdown-option')"></select>
+                            <div id="master-dropdown-option" class="dropdown-option">
+                                <div>Full time, Engineering</div>
+                                <div>Part time, Engineering</div>
+                                <div>Full time, Science</div>
+                                <div>Part time, Science</div>
+                            </div>
+                        </div> -->
+        
+                        <div class="textbox2">
+                            <p class="list">Everything in Bachelor, <span class="plus">plus:</span></p>
+                            <ul>
+                                <li>Get access to further courses unavailable to Bacehlors</li>
+                                <li>Opportunities for upper tier students to do focused research</li>
+                            </ul>  
+                        </div>
+                    </div>
+    
+                    
+        
+                    <button>START FREE TRIAL</button>
                 </div>
-                
-                <div class="textbox2">
-                    <p class="list">Everything in Masters, <span class="plus">plus:</span></p>
-                    <ul>
-                        <li>You can get to call yourself "Doctor!"</li>
-                        <li>Enjoy the thrilling experience of trying to get published</li>
-                        <li>Free 10 word unique thesis title generated for you</li>
-                    </ul>
+                <hr>
+        
+                <div id="doctorate" class="course">
+    
+                    <div class="textboxes">
+                        <div class="textbox1">
+                            <h1>Doctorate</h1>
+                            <p>Complete deep research to completely standout in a unique way</p>
+                            
+                            <p>Contact us to learn more about scholarships and other information</p>
+                        </div>
+                        
+                        <div class="textbox2">
+                            <p class="list">Everything in Masters, <span class="plus">plus:</span></p>
+                            <ul>
+                                <li>You can get to call yourself "Doctor!"</li>
+                                <li>Enjoy the thrilling experience of trying to get published</li>
+                                <li>Free 10 word unique thesis title generated for you</li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+        
+                    
+        
+                    <button>CONTACT US</button>
                     
                 </div>
-    
-                <button>CONTACT US</button>
-                
             </div>
         </div>
+        
+        
+        
 
 
     </div>
@@ -130,25 +171,56 @@
 </html>
 
 <script>
-    function openCourse(evt, Name) {
-        
-        // Declare all variables
-        var i, tabcontent, tablinks;
-
-        // Get all elements with class="tabcontent" and hide them
-        tabcontent = document.getElementsByClassName("degree");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
+    function openCourse(self, Name) {
+        var i;
+        var x = document.getElementsByClassName("course");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
         }
-
-        // Get all elements with class="tablinks" and remove the class "active"
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        var y = document.getElementsByClassName("btn");
+        for(i=0; i<y.length; i++){
+            y[i].classList.remove('active')
         }
-
-        // Show the current tab, and add an "active" class to the button that opened the tab
-        document.getElementById(Name).style.display = "block";
-        evt.currentTarget.className += " active";
+        self.classList.add('active')
+        document.getElementById(Name).style.display = "flex";
     }
+
+    // function openDropdown(self,name) {
+
+    //     document.getElementById(name).classList.add("show");
+    //     document.getElementById(name).style.display='block';
+    //     self.style.height='240px';
+
+    // }
+
+    // window.onclick=function(event){
+    //     if(!event.target.matches('.dropdown-menu')){
+    //         var x= document.getElementsByClassName('dropdown-option')
+    //         var i;
+    //         var select_box = document.getElementsByClassName("dropdown-menu");
+    //         for(i=0;i<select_box.length; i++){
+    //             select_box[i].style.height='50px'
+    //         }
+            
+    //         for (i=0; i<x.length; i++){
+    //             if(x[i].classList.contains("show")){
+    //                 x[i].style.display='none';
+    //                 x[i].classList.remove("show");
+    //             }
+    //         }
+    //     }
+    // }
+
+    // function closeDropdown(){
+    //     x = document.getElementsByClassName('dropdown-option')
+    //     for(var i=0; i<x.length; i++){
+    //         if(window.getComputedStyle(x[i], null).display == 'block'){
+    //             x[i].style.display="none";
+    //             console.log("close");
+    //         }
+    //     } 
+    // }
+
+    // document.addEventListener("click", closeDropdown);
+
 </script>
