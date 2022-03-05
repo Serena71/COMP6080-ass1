@@ -98,73 +98,49 @@ h1{
     font-weight: bold;
 }
 
-
-/* .dropdown-option{
-    display: none;
-    width: 60%;
-    color:rgb(0, 13, 71);
-    font-weight: bold;
-    position: relative;
-    left: 1.5rem;
-    bottom: 15rem;
-    line-height: 3.5rem;
-}
-
-select{
-    background-color: transparent;
-    appearance: none;
+.dropdown{
     width: 100%;
-    height: 50px;
-    border-radius: 5px;
-    white-space: normal;
 }
 
-.dropdown:after{
-    content: "▾";
-    color: cyan;
-    height: 10px;
-    position: relative;
-    bottom: 2em;
-    left:95%
-} */
-
-select{
-    background-color: white;
-    appearance:none;
-    outline: none;
-    background: url('assets/arrow.svg') no-repeat 98%;
+.selected_opt{
+    background-color: transparent;
+    width: 100%;
     color: rgb(0, 13, 71);
     font-size: 100%;
     font-weight: bold;
-    padding:0.8rem 1.5rem;
-    padding-right: 5rem;
-    width: 100%;
-    border-width: 2px;
+    width:70%;
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    padding-right: 27%;
+    border: 1px solid rgb(0, 13, 71);
     border-radius: 5px;
-    white-space: normal;
-
-} 
-.select-box option{
-    background-color: inherit;
-    /* display: none; */
+    background: url('assets/arrow.svg') no-repeat 98%;
 }
 
-.select-box{
-    flex: 1;
+.options{
+    background-color: transparent;
+    color: rgb(0, 13, 71);
+    font-size: 100%;
+    font-weight: bold;
+    display: none;
+    padding: 0.5rem 1.5rem;
+    padding-right: 7.2rem;
+    border: 1px solid rgb(0, 13, 71);
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-/* .select-box:after{
-    content: "▾";
-    color: cyan;
-    height: 10px;
-    position: relative;
-    bottom: 2em;
-    left:95%
-} */
+.opt{
+    margin: 3% 0;
+}
 
+.opt:first-child{
+    margin-top: 0;
+}
 
-
-
+.opt:last-child{
+    margin-bottom: 0;
+}
 
 .plus{
     color: rgb(5, 228, 228);
@@ -191,15 +167,10 @@ ul li{
 
 li:before{
     content: "";
-    /* content: url('assets/tick.svg'); */
-    /* content: "\2713\0020\0020"; */
-    /* color: rgb(5, 228, 228); */
-    /* font-size: 23px; */
     background: url('assets/tick.svg') no-repeat top;
     width: 20px;
     margin-right: 0.8rem;
-    /* display: inline-block; */
-    /* margin-right: 0.5rem; */
+
 }
 
 
@@ -310,13 +281,14 @@ li:before{
 
     }
 
-    #bachelor select{
+    #bachelor .selected_opt{
         color: white;
+        border: 1px solid white;
     }
-
-    /* #bachelor-dropdown-option{
+    #bachelor .options{
         color: white;
-    } */
+        border: 1px solid white;
+    }
     
     hr{
         position: relative;

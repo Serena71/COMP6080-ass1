@@ -36,27 +36,18 @@
                             <span class="grey-text">/mo.</span>
                         </p>
                     </div>
-        
-                    <div class="select-box">
-                        <p>Choose your load and faculty</p>
-                        <select name="drop-down" id="drop-down-bachlor">
-                            <option value="ft-eng" selected="selected">Full time, Engineering</option>
-                            <option value="pt-eng">Part time, Engineering</option>
-                            <option value="ft-sci">Full time, Science</option>
-                            <option value="pt-sci">Part time, Science</option>
-                        </select>
-                    </div>
 
-                    <!-- <div class="dropdown">
+                    <div class="dropdown">
                         <p>Choose your load and faculty</p>
-                        <select class="dropdown-menu" onclick="openDropdown(this,'bachelor-dropdown-option')"></select>
-                        <div id="bachelor-dropdown-option" class="dropdown-option">
-                            <div>Full time, Engineering</div>
-                            <div>Part time, Engineering</div>
-                            <div>Full time, Science</div>
-                            <div>Part time, Science</div>
+
+                        <div class="selected_opt"></div>
+                        <div class="options">
+                            <div class="opt selected">Full time, Engineering</div>
+                            <div class="opt">Part time, Engineering</div>
+                            <div class="opt">Full time, Science</div>
+                            <div class="opt">Part time, Science</div>
                         </div>
-                    </div> -->
+                    </div>
                     
         
                     <div class="textbox2">
@@ -89,27 +80,20 @@
                             </p>
                             
                         </div>
-        
-                        <div class="select-box">
+    
+
+                        <div class="dropdown">
                             <p>Choose your load and faculty</p>
-                            <select name="drop-down" id="drop-down-master">
-                                <option value="Full time, Engineering" selected="selected">Full time, Engineering</option>
-                                <option value="pt-eng">Part time, Engineering</option>
-                                <option value="ft-sci">Full time, Science</option>
-                                <option value="pt-sci">Part time, Science</option>
-                            </select>
+
+                            <div class="selected_opt"></div>
+                            <div class="options">
+                                <div class="opt selected">Full time, Engineering</div>
+                                <div class="opt">Part time, Engineering</div>
+                                <div class="opt">Full time, Science</div>
+                                <div class="opt">Part time, Science</div>
+                            </div>
                         </div>
 
-                        <!-- <div class="dropdown">
-                            <p>Choose your load and faculty</p>
-                            <select class="dropdown-menu" onclick="openDropdown(this,'master-dropdown-option')"></select>
-                            <div id="master-dropdown-option" class="dropdown-option">
-                                <div>Full time, Engineering</div>
-                                <div>Part time, Engineering</div>
-                                <div>Full time, Science</div>
-                                <div>Part time, Science</div>
-                            </div>
-                        </div> -->
         
                         <div class="textbox2">
                             <p class="list">Everything in Bachelor, <span class="plus">plus:</span></p>
@@ -185,42 +169,47 @@
         document.getElementById(Name).style.display = "flex";
     }
 
-    // function openDropdown(self,name) {
+    function update_selected(selected_item, select_box){
+        select_box.textContent = selected_item.textContent;
+    }
 
-    //     document.getElementById(name).classList.add("show");
-    //     document.getElementById(name).style.display='block';
-    //     self.style.height='240px';
+    var select_boxes = document.getElementsByClassName('selected_opt');
+    var option_boxes = document.getElementsByClassName('options');
 
-    // }
 
-    // window.onclick=function(event){
-    //     if(!event.target.matches('.dropdown-menu')){
-    //         var x= document.getElementsByClassName('dropdown-option')
-    //         var i;
-    //         var select_box = document.getElementsByClassName("dropdown-menu");
-    //         for(i=0;i<select_box.length; i++){
-    //             select_box[i].style.height='50px'
-    //         }
-            
-    //         for (i=0; i<x.length; i++){
-    //             if(x[i].classList.contains("show")){
-    //                 x[i].style.display='none';
-    //                 x[i].classList.remove("show");
-    //             }
-    //         }
-    //     }
-    // }
+    for(var i=0; i<select_boxes.length; i++){
+        var select_box = select_boxes[i]
+        var options = select_box.nextElementSibling;
+        var selected_item = options.getElementsByClassName('selected')[0];
+        // update select box initially
+        update_selected(selected_item, select_box);
 
-    // function closeDropdown(){
-    //     x = document.getElementsByClassName('dropdown-option')
-    //     for(var i=0; i<x.length; i++){
-    //         if(window.getComputedStyle(x[i], null).display == 'block'){
-    //             x[i].style.display="none";
-    //             console.log("close");
-    //         }
-    //     } 
-    // }
+        // click select: show the options
+        select_box.addEventListener('click', (event) =>{
+            var options = event.target.nextElementSibling;
+            options.style.display='block';
+            event.target.style.display='none';
+        })
+    }
+    
+    for(var options of option_boxes){
+        var items = options.getElementsByClassName('opt');
+        // click item: update select box, show select box, hide options
+        for(var i=0; i<items.length; i++){
+            var item = items[i];
+            item.addEventListener('click', (event)=>{
+                var selected_item = event.target.parentElement.getElementsByClassName('selected')[0];
+                var select_box = event.target.parentElement.previousElementSibling;
+                
+                selected_item.classList.remove('selected');
 
-    // document.addEventListener("click", closeDropdown);
+                selected_item = event.target;
+                selected_item.classList.add('selected');
+                update_selected(selected_item, select_box);
+                event.target.parentElement.style.display='none';
+                select_box.style.display='block';
+            })
+        }
+    }
 
 </script>
