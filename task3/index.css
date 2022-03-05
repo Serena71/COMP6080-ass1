@@ -2,8 +2,6 @@
     /* width: 1614px;
     height: 1234px; */
     /* border: 3px solid white; */
-
-
     background-color: rgb(0, 13, 71);
     color: white;
     height: 100vh;
@@ -25,12 +23,9 @@
     /* bottom: 0.5rem; */
 } 
 
-
-
 input[type=checkbox]{
 	height: 0;
 	width: 0;
-	/* visibility: hidden; */
     display: none;
 }
 
@@ -115,10 +110,6 @@ h1{
     line-height: 3.5rem;
 }
 
-.dropdown-option>div:first-child{
-    display: inline-block;
-}
-
 select{
     background-color: transparent;
     appearance: none;
@@ -138,10 +129,12 @@ select{
 } */
 
 select{
-    background-color: transparent;
+    background-color: white;
     appearance:none;
+    outline: none;
+    background: url('assets/arrow.svg') no-repeat 98%;
     color: rgb(0, 13, 71);
-    font-size: 18px;
+    font-size: 100%;
     font-weight: bold;
     padding:0.8rem 1.5rem;
     padding-right: 5rem;
@@ -149,24 +142,27 @@ select{
     border-width: 2px;
     border-radius: 5px;
     white-space: normal;
+
 } 
+.select-box option{
+    background-color: inherit;
+    /* display: none; */
+}
 
 .select-box{
     flex: 1;
 }
 
-.select-box:after{
+/* .select-box:after{
     content: "▾";
     color: cyan;
     height: 10px;
     position: relative;
     bottom: 2em;
     left:95%
-}
+} */
 
-.select-box option{
-    display: block;
-}
+
 
 
 
@@ -193,12 +189,17 @@ ul li{
     display: flex;
 }
 
-li::before{
-    content: "\2713\0020\0020";
-    color: rgb(5, 228, 228);
-    font-size: 23px;
-    display: inline-block;
-    margin-right: 0.5rem;
+li:before{
+    content: "";
+    /* content: url('assets/tick.svg'); */
+    /* content: "\2713\0020\0020"; */
+    /* color: rgb(5, 228, 228); */
+    /* font-size: 23px; */
+    background: url('assets/tick.svg') no-repeat top;
+    width: 20px;
+    margin-right: 0.8rem;
+    /* display: inline-block; */
+    /* margin-right: 0.5rem; */
 }
 
 
@@ -376,10 +377,7 @@ li::before{
         flex-direction: column;
         justify-content: space-around;
     }
-
-
     
-
     .tab{
         display: flex;
         width: 100%;
