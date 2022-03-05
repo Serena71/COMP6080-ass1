@@ -99,7 +99,6 @@
 
 
     function render_output(){
-
         if(invalid_fname){
             output.value = "Please input a valid firstname";
         }
@@ -169,6 +168,7 @@
                 dic.age = '';
             }
         }
+        // render output
         render_output();
     }
 
@@ -214,31 +214,6 @@
             city[i].checked=false;
         }
     })
-    // trigger outputs
-    // window.addEventListener('change', function update(){
-    //     for(key in dic){
-    //         console.log(key);
-    //         console.log(dic.key);
-    //     }
-    //     if(invalid_fname){
-    //     output.value = "Please input a valid firstname";
-    //     }
-    //     else if(!invalid_fname && invalid_lname){
-    //         output.value = "Please input a valid lastname";
-    //     }
-    //     else if(!invalid_lname && !invalid_lname && invalid_dob){
-    //         output.value = "Please input a valid date of birth";
-    //     }
-    //     else if(!invalid_lname && !invalid_lname && !invalid_dob){
-    //         output.value = "Hello " + dic.fname + ' ' + dic.lname + ', you are '; 
-
-    //     }
-    //     else{
-    //         output.value = '';
-    //     }
-    // })
-
-    // check empty inputs
     
 
     
