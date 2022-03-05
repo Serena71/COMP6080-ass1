@@ -13,27 +13,27 @@
             <tr>
                 <td>First Name</td>
                 <td>
-                    <input type="text">
+                    <input type="text" id="f_name">
                 </td>
             </tr>
             <tr>    
                 <td>Last Name</td>
                 <td>
-                    <input type="text">
+                    <input type="text" id="l_name">
                 </td>
             </tr>
             <tr>    
                 <td>Date of birth</td>
                 <td>
-                    <input type="text">
+                    <input type="text" id="dob">
                 </td>
             </tr>
             <tr>    
                 <td>Favourite animal</td>
                 <td>
-                    <select>
+                    <select id="animal">
                         <option value="dog">Dog</option>
-                        <option value="Puppy">Dog</option>
+                        <option value="puppy">Puppy</option>
                     </select>
                 </td>
             </tr>
@@ -43,13 +43,13 @@
                     <div>
                         <ul style="padding: 0;margin: 0; list-style: none;">
                             <li>
-                                <input type="checkbox"> Sydney
+                                <input type="checkbox" class="city" value="Sydney"> Sydney
                             </li>
                             <li>
-                                <input type="checkbox"> Melbourne
+                                <input type="checkbox" class="city" value="Melbourne"> Melbourne
                             </li>
                             <li>
-                                <input type="checkbox"> Adelaide
+                                <input type="checkbox" class="city" value="Adelaide"> Adelaide
                             </li>
                         </ul>
                         
@@ -64,12 +64,184 @@
         
     </table>
     <br/>
-    <button>Remove</button>
+    <button id="btn">Remove</button>
     <br/>
     <br/>
     <div>
-        <input type="text" style="width: 90%;">
+        <textarea id="output" cols="50" rows="10"></textarea>
     </div>
     
 </body>
+
+
+<script>
+
+    var f_name = document.getElementById('f_name');
+    var l_name = document.getElementById('l_name');
+    var dob = document.getElementById('dob');
+    var animal = document.getElementById('animal');
+    var city = document.getElementsByClassName('city');
+    var output = document.getElementById('output');
+    var invalid_fname=true;
+    var invalid_lname=true;
+    var invalid_dob=true;
+    
+
+    let remove = document.getElementById('btn')
+    let dic = {
+        fname: '',
+        lname: '',
+        age: '',
+        animal: 'dog',
+        city: 'no cities'
+    };
+
+
+
+    function render_output(){
+
+        if(invalid_fname){
+            output.value = "Please input a valid firstname";
+        }
+        else if(!invalid_fname && invalid_lname){
+            output.value = "Please input a valid lastname";
+        }
+        else if(!invalid_lname && !invalid_lname && invalid_dob){
+            output.value = "Please input a valid date of birth";
+        }
+        else if(!invalid_lname && !invalid_lname && !invalid_dob){
+            output.value = "Hello " + dic.fname + ' ' + dic.lname + ', you are ' + dic.age + " years old, your favourite animal is " + dic.animal + " and you've lived in " + dic.city + '.'
+
+        }
+        else{
+            output.value = '';
+        }
+    }
+
+    function check_value(event, text_type){
+        var val = event.target.value
+        if(event.target.id == 'f_name'){
+            // check first name
+            if(val.match(/[A-Za-z]{3,50}/)) {
+                invalid_fname=false;
+                val = val.toLowerCase();
+                val = val.charAt(0).toUpperCase() + val.slice(1);
+                dic.fname = val;
+            }
+            else{
+                invalid_fname=true;
+                dic.fname = '';
+            }
+        }
+        else if(event.target.id == 'l_name'){
+            // check last name
+            if(val.match(/[A-Za-z]{3,50}/)) {
+                invalid_lname=false;
+                val = val.toLowerCase();
+                val = val.charAt(0).toUpperCase() + val.slice(1);
+                dic.lname = val;
+            }
+            else{
+                invalid_lname=true;
+                dic.lname = '';
+            }
+        }
+        else if(event.target.id == 'dob'){
+            // check date of birth
+            var dob_elmnts = val.split('/');
+            var dob_rearrange = dob_elmnts[1] + '/' + dob_elmnts[0] + '/' + dob_elmnts[2];
+            if(val.match(/\d{2}\/\d{2}\/\d{4}/) && !isNaN(Date.parse(dob_rearrange)) ){
+                // calculate the age from dob
+                invalid_dob=false;
+                var d = parseInt(dob_elmnts[0],10)
+                var m = parseInt(dob_elmnts[1],10)
+                var y = parseInt(dob_elmnts[2],10)
+                var now = new Date(Date.now());
+                var age = now.getUTCFullYear()-y;
+                if(now.getUTCMonth()+1 < m || (now.getUTCMonth()+1 == m && now.getUTCDate() < d)){
+                    age-=1;
+                }
+                dic.age = age;
+
+            }
+            else{
+                invalid_dob=true;
+                dic.age = '';
+            }
+        }
+        render_output();
+    }
+
+
+
+    // event listeners
+    f_name.addEventListener('blur',check_value);
+    l_name.addEventListener('blur',check_value);
+    dob.addEventListener('blur', check_value);
+    animal.addEventListener('change', (event)=>{
+        dic.animal = event.target.value;
+        render_output();
+    })
+    for(var i=0; i<city.length; i++){
+        city[i].addEventListener('click', (event) => {
+            if(event.target.checked){
+                if(dic.city == 'no cities'){
+                    dic.city = [];
+                }
+                dic.city.push(event.target.value);
+            }
+            else{
+                if(dic.city !== 'no cities'){
+                    const idx = dic.city.indexOf(event.target.value);
+                    dic.city.splice(idx, 1);
+                }
+            }
+
+            render_output();
+        });
+    }
+    
+
+    
+
+    // clear all inputs
+    remove.addEventListener('click', function remove_all(){
+        f_name.value = '';
+        l_name.value = '';
+        dob.value = '';
+        output.value = '';
+        for(var i=0; i<city.length; i++){
+            city[i].checked=false;
+        }
+    })
+    // trigger outputs
+    // window.addEventListener('change', function update(){
+    //     for(key in dic){
+    //         console.log(key);
+    //         console.log(dic.key);
+    //     }
+    //     if(invalid_fname){
+    //     output.value = "Please input a valid firstname";
+    //     }
+    //     else if(!invalid_fname && invalid_lname){
+    //         output.value = "Please input a valid lastname";
+    //     }
+    //     else if(!invalid_lname && !invalid_lname && invalid_dob){
+    //         output.value = "Please input a valid date of birth";
+    //     }
+    //     else if(!invalid_lname && !invalid_lname && !invalid_dob){
+    //         output.value = "Hello " + dic.fname + ' ' + dic.lname + ', you are '; 
+
+    //     }
+    //     else{
+    //         output.value = '';
+    //     }
+    // })
+
+    // check empty inputs
+    
+
+    
+
+</script>
 </html>
